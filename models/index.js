@@ -16,15 +16,15 @@ Post.belongsTo(User, {
 
 User.belongsToMany(Post, {
   through: Vote,
-  as: 'voted_posts',
+  as: 'voted_comments',
   foreignKey: 'user_id',
   onDelete: 'SET NULL'
 });
 
-Post.belongsToMany(User, {
+Comment.belongsToMany(User, {
   through: Vote,
-  as: 'voted_posts',
-  foreignKey: 'post_id',
+  as: 'voted_comments',
+  foreignKey: 'comment_id',
   onDelete: 'SET NULL'
 });
 
@@ -33,8 +33,8 @@ Vote.belongsTo(User, {
   onDelete: 'SET NULL'
 });
 
-Vote.belongsTo(Post, {
-  foreignKey: 'post_id',
+Vote.belongsTo(Comment, {
+  foreignKey: 'comment_id',
   onDelete: 'SET NULL'
 });
 
@@ -42,8 +42,8 @@ User.hasMany(Vote, {
   foreignKey: 'user_id'
 });
 
-Post.hasMany(Vote, {
-  foreignKey: 'post_id'
+Comment.hasMany(Vote, {
+  foreignKey: 'comment_id'
 });
 
 Comment.belongsTo(User, {

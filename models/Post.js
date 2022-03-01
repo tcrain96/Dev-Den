@@ -15,7 +15,9 @@ class Post extends Model {
           'id',
           'post_text',
           'title',
-          'category',
+          'front_end',
+          'back_end',
+          'full_stack',
           'created_at',
           [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
@@ -61,7 +63,17 @@ Post.init(
         key: 'id'
       }
     },
-    category: {
+    front_end: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
+    },
+    back_end: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
+    },
+    full_stack: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
       defaultValue: false
