@@ -9,23 +9,11 @@ User.hasMany(Post, {
   foreignKey: 'user_id'
 });
 
-Post.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
-
-User.belongsToMany(Post, {
-  through: Vote,
-  as: 'voted_comments',
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
-
 Comment.belongsToMany(User, {
-  through: Vote,
-  as: 'voted_comments',
-  foreignKey: 'comment_id',
-  onDelete: 'SET NULL'
+   through: Vote,
+   as: 'voted_comments',
+   foreignKey: 'comment_id',
+   onDelete: 'SET NULL'
 });
 
 Vote.belongsTo(User, {
