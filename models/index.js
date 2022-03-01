@@ -9,6 +9,13 @@ User.hasMany(Post, {
   foreignKey: 'user_id'
 });
 
+User.belongsToMany(Comment, {
+  through: Vote,
+  as: 'voted_comments',
+  foreignKey: 'user_id',
+   onDelete: 'SET NULL'
+});
+
 Comment.belongsToMany(User, {
    through: Vote,
    as: 'voted_comments',
