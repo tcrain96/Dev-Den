@@ -47,6 +47,7 @@ router.get('/posts/:id',withAuth,(req,res)=>{
     where: {
       user_id: req.params.id
     },
+    order:[['created_at','DESC']],
     attributes: [
       'id',
       'title',

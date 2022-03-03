@@ -3,6 +3,9 @@ const sequelize = require('../../config/connection');
 const { Post, User, Comment, Vote } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+var Filter = require('bad-words'),
+filter = new Filter();
+
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
@@ -11,7 +14,6 @@ router.get('/', (req, res) => {
       'post_text',
       'created_at'
     ],
-    order:[['created_at','ASC']],
     include: [
       {
         model: User,
@@ -68,8 +70,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
   Post.create({
-    title: req.body.title,
-    post_text: req.body.post_text,
+    title: filter.clean(req.body.title),
+    post_text: filter.clean(req.body.post_text),
     user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
@@ -92,7 +94,7 @@ router.put('/upvote', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title
+      title: filter.clean(req.body.title)
     },
     {
       where: {
