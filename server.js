@@ -1,12 +1,22 @@
+//Required Variables
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const exphbs = require('express-handlebars');
 
+//Server Setup
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Handlebars
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+//Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 // turn on routes
 app.use(routes);
