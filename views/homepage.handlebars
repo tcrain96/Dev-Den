@@ -1,6 +1,19 @@
-<ol class="post-list">
+
+{{#if loggedIn}}
+<form class="post-form">
+  <div>
+    <textarea name="title"></textarea>
+    <textarea name="post-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Post</button>
+  </div>
+</form>
+{{/if}}
+
+<div id="posts-section">
   {{#each posts as |post|}}
-  <li>
     <article class="post">
       <div class="title">
         <a href="/post/{{post.id}}">
@@ -10,6 +23,10 @@
         </a>
       </div>
     </article>
-  </li>
+
   {{/each}}
-</ol>
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/post.js"></script>
+{{/if}}
