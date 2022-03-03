@@ -1,0 +1,13 @@
+<div class="my-posts">
+  {{#each posts as |post|}}
+  <section class="posts">
+    <div class="text">
+      <a href="/posts/{{post.user_id}}">
+        <h2>{{post.title}}</h2>
+        <p>{{post.post_text}}</p>
+        <p>{{user.username}}</p>
+        </a>
+    </div>
+  </section>
+  {{/each}}
+</div>

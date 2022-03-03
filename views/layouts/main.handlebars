@@ -19,7 +19,7 @@
       <nav>
         <a href="/">Dashboard</a>
         {{#if loggedIn}}
-        <a href="/posts">My Posts</a>
+        <a href="/posts/{{userId}}">My Posts</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
         <a href="/login">login</a>
