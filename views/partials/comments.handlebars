@@ -6,7 +6,14 @@
         </div>
         <div class="text">
             {{comment_text}}
-        <button hidden type="button" class="upvote-btn">upvote</button>
+            <div>
+                {{vote_count}} {{format_plural "vote" vote_count}}
+                |
+                <span>
+                    <button hidden type="button" class="upvote-btn">upvote</button>
+                </span>
+            </div>
+        </div>
     </section>
     {{/each}}
 </div>

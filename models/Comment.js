@@ -5,7 +5,7 @@ class Comment extends Model {
     static upvote(body, models) {
         return models.Vote.create({
             user_id: body.user_id,
-            post_id: body.post_id
+            post_id: body.comment_id
         })
             .then(() => {
                 return Comment.findOne({
@@ -20,10 +20,20 @@ class Comment extends Model {
                             sequelize.literal('(SELECT COUNT(*) FROM vote WHERE comment.id = vote.comment_id)'),
                             'vote_count'
                         ]
+                    ],
+                    include: [
+                        {
+                            model: models.Comment,
+                            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                            include: {
+                                model: models.User,
+                                attributes: ['username']
+                            }
+                        }
                     ]
                 });
             })
-        ;
+            ;
     }
 }
 

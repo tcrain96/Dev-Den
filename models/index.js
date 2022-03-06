@@ -27,7 +27,6 @@ Skill.belongsTo(User, {
 User.belongsToMany(Comment, {
     through: Vote,
     as: 'voted_comments',
-
     foreignKey: 'user_id',
     onDelete: 'SET NULL'
 });
