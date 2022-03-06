@@ -1,47 +1,79 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dev-Den</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev-Den</title>
+    <link rel="stylesheets" src="/stylesheets/style.css" />
+  </head>
 
-<body>
-  <div class="wrapper">
-
-    <header>
-
-      <h1>
-        <a href="/">Dev-Den</a>
-      </h1>
-
-      <nav>
-        <a href="/">Dashboard</a>
-        {{#if loggedIn}}
-        <a href="/posts">My Posts</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-      
-    </header>
-
-    <main>
-      {{{ body }}}
-    </main>
-
-    <footer>
-      <p>2022 Dev-Den All Rights Reserved</p>
-    </footer>
+  <style>
     
-  </div>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #323232;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1%;
+    }
+    a {
+      text-decoration: none;
+      color: aliceblue;
+    }
 
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-  
-</body>
+    .logo {
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .nav-elem {
+      float: right;
+      margin: 15px 30px 5px 30px;
+    }
+
+    nav {
+      align-items: right;
+    }
+  </style>
+
+  <body>
+    <div class="wrapper">
+
+      <header>
+        <h1>
+          <a class="logo" href="/">Dev-Den</a>
+        </h1>
+
+        <nav>
+          <a class="nav-elem" href="/">Dashboard</a>
+          {{#if loggedIn}}
+            <a class="nav-elem" href="/posts">My Posts</a>
+            <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
+            <a class="nav-elem" href="/login">login</a>
+          {{/if}}
+        </nav>
+
+      </header>
+
+      <main>
+        {{{body}}}
+      </main>
+
+      <footer>
+        <p>2022 Dev-Den All Rights Reserved</p>
+      </footer>
+
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+  </body>
 
 </html>
