@@ -48,6 +48,18 @@ User.init(
             // this means the password must be at least four characters long
                 len: [4]
             }
+        },
+        phone_number: {
+            type: DataTypes.STRING,
+        },
+        linkedin_url: {
+            type: DataTypes.STRING
+        },
+        github_username: {
+            type: DataTypes.STRING
+        },
+        bio: {
+            type: DataTypes.TEXT
         }
     },
     {
