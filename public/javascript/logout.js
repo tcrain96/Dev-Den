@@ -5,6 +5,7 @@ async function logout() {
     });
 
     if (response.ok) {
+        sessionStorage.setItem('status', null)
         document.location.replace('/');
     } else {
         alert(response.statusText);

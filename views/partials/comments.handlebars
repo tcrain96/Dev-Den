@@ -6,14 +6,7 @@
         </div>
         <div class="text">
             {{comment_text}}
-        </div>
-        {{#if loggedIn}}
-        <button type="button" class="upvote-btn">upvote</button>
-        {{/if}}
+        <button hidden type="button" class="upvote-btn">upvote</button>
     </section>
     {{/each}}
 </div>
-
-{{#if loggedIn}}
-<script src="/javascript/upvote.js"></script>
-{{/if}}

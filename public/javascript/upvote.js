@@ -23,3 +23,19 @@ async function upvoteClickHandler(event) {
 }
   
 document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
+
+var loggedInCheck = function () {
+    let upvoteBtns = document.querySelectorAll('.upvote-btn');
+    console.log('running');
+    if (sessionStorage.getItem('status') != null) {
+        console.log('logged in');
+        console.log(upvoteBtns);
+        upvoteBtns.forEach(btn => btn.removeAttribute('hidden'));
+        // upvoteBtns.removeAttribute('hidden');
+    }
+    else if (sessionStorage.getItem('status') = null) {
+        console.log('logged out')
+    }
+}
+
+loggedInCheck();
