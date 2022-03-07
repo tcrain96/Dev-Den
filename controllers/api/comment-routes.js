@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
                 'comment_text',
                 'created_at',
             ],
+            order: [['created_at', 'DESC']]
         })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {

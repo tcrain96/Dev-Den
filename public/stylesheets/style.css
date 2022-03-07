@@ -38,6 +38,37 @@ main a:hover {
   opacity: 0.7;
 }
 
+main form input,
+main form textarea {
+  background-color: transparent;
+  border: 3px solid var(--accent-color);
+  padding: 10px 5px;
+  margin: 10px 0px;
+  color: var(--font-color);
+  width: 50%;
+}
+
+main form label {
+  color: var(--font-color);
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+}
+
+main form button {
+  background-color: var(--accent-color);
+  text-decoration: none;
+  color: var(--font-color);
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+}
+
+main form button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 /*Post Styles*/
 main .post {
   padding: 30px;
@@ -61,13 +92,6 @@ main .user-forms {
   flex-wrap: wrap;
 }
 
-main .user-forms input {
-  background-color: transparent;
-  border: 3px solid var(--accent-color);
-  padding: 10px 5px;
-  color: var(--font-color);
-}
-
 main .login-form,
 main .signup-form {
   border: 3px solid var(--accent-color);
@@ -80,29 +104,50 @@ main .signup-form h2 {
   text-align: center;
 }
 
-main label {
-  color: var(--font-color);
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px;
-}
-
 main .user-forms div {
   margin: 20px 0px;
 }
 
-main .user-forms button {
-  background-color: var(--accent-color);
-  text-decoration: none;
-  color: var(--font-color);
-  border: none;
-  font-size: 20px;
-  padding: 10px;
+/*Edit Post Styles*/
+
+main .edit-post-article{
+  border: 3px solid var(--accent-color);
+  margin: 20px 0px;
+  padding: 20px;
 }
 
-main .user-forms button:hover {
-  opacity: 0.7;
-  cursor: pointer;
+main .edit-post-article input{
+  margin: 10px 0px;
+}
+main .edit-post-article button{
+  margin: 10px 0px;
+}
+
+/*Dashboard Styles*/
+main .dashboard-posts-section{
+  margin-top: 100px;
+}
+
+main .dashboard-create-post-section{
+  border: 3px solid var(--accent-color);
+  padding: 20px;
+}
+
+/*Comment Section Styles*/
+
+main .comment-form{
+  margin: 50px 0px;
+}
+main .comments-section .comment{
+  border: 3px solid var(--accent-color);
+  margin: 20px 0px;
+  padding: 20px;
+}
+
+main .comments-section .comment h3{
+  color: var(--font-color);
+  font-weight: bold;
+  font-size: 20px;
 }
 
 /*Media Queries*/

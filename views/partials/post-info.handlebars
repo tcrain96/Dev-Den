@@ -4,10 +4,7 @@
         <div class="user-info">
             <p>{{user.username}} on {{format_date created_at}}</p>
         </div>
-        {{#if loggedIn}}
-        <a href="/post/{{id}}">Answer Question</a>
-        {{else}}
+
         <a href="/post/{{id}}">View Responses</a>
-        {{/if}}
     
 </article>

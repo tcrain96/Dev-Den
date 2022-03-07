@@ -1,16 +1,9 @@
 <article class="post">
     
+        <h2>{{title}}</h2>
         <div class="user-info">
             <p>{{user.username}} on {{format_date created_at}}</p>
         </div>
-        <h2>{{title}}</h2>
-        <div>
-            <p>{{post_text}}</p>
-        </div>
-        {{#if loggedIn}}
-        <a href="/post/{{id}}">Answer Question</a>
-        {{else}}
-        <a href="/post/{{id}}">View Responses</a>
-        {{/if}}
+        <p>{{post_text}}</p>
     
 </article>
