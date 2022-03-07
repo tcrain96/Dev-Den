@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
     console.log(req.session);
@@ -11,6 +11,7 @@ router.get('/', (req, res) => {
             'title',
             'created_at'
         ],
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: Comment,
@@ -73,10 +74,8 @@ router.get('/post/:id', (req, res) => {
                 return;
             }
         
-            // serialize the data
             const post = dbPostData.get({ plain: true });
         
-            // pass data to template
             res.render('single-post', {
                 post,
                 loggedIn: req.session.loggedIn

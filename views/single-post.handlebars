@@ -1,7 +1,8 @@
-{{> post-info post}}
+{{> post-extended post}}
 
 {{#if loggedIn}}
 <form class="comment-form">
+    <h2>Add a Comment</h2>
     <div>
         <textarea name="comment-body"></textarea>
     </div>
@@ -16,5 +17,4 @@
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
 {{/if}}

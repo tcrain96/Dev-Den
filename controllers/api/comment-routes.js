@@ -1,20 +1,20 @@
 const router = require('express').Router();
-const { Comment, User, Post, Vote } = require('../../models');
+const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
-const sequelize = require('../../config/connection');
+// importing clean filter to censor vulgar language and implement on post route
 let Filter = require('bad-words'),
 filter = new Filter();
+
 
 router.get('/', (req, res) => {
     console.log('======================');
     Comment.findAll({
-            // Query configuration
             attributes: [
                 'id',
                 'comment_text',
                 'created_at',
-                [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE comment.id = vote.comment_id)'), 'vote_count']
             ],
+            order: [['created_at', 'DESC']]
         })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
@@ -33,18 +33,8 @@ router.get('/:id', (req, res) => {
             'id',
             'comment_text',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE comment.id = vote.comment_id)'), 'vote_count']
         ],
         include: [
-            // include the Comment model here:
-            {
-                model: Post,
-                attributes: ['id', 'comment_text', 'comment_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
             {
                 model: User,
                 attributes: ['username']
@@ -69,7 +59,6 @@ router.post('/', withAuth, (req, res) => {
     Comment.create({
         comment_text: filter.clean(req.body.comment_text),
         post_id: req.body.post_id,
-        // use the id from the session
         user_id: req.session.user_id
     })
         .then(dbCommentData => res.json(dbCommentData))
@@ -80,20 +69,6 @@ router.post('/', withAuth, (req, res) => {
     ;
 });
 
-// PUT /api/posts/upvote
-router.put('/upvote', withAuth, (req, res) => {
-    // make sure the session exists first
-    if (req.session) {
-        // pass session id along with all destructured properties on req.body
-        Comment.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Post, User })
-            .then(updatedVoteData => res.json(updatedVoteData))
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            })
-        ;
-    }
-});
 
 router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({

@@ -1,19 +1,8 @@
-<div class="comments">
+<section class="comments-section">
     {{#each this}}
-    <section class="comment">
-        <div class="meta">
-            {{user.username}} on {{format_date created_at}}
-        </div>
-        <div class="text">
-            {{comment_text}}
-            <div>
-                {{vote_count}} {{format_plural "vote" vote_count}}
-                |
-                <span>
-                    <button hidden type="button" id="upvote-btn" class="upvote-btn">upvote</button>
-                </span>
-            </div>
-        </div>
-    </section>
+    <article class="comment">
+        <h3>{{comment_text}}</h3>
+        <p>{{user.username}} on {{format_date created_at}}</p>
+    </article>
     {{/each}}
-</div>
+</section>

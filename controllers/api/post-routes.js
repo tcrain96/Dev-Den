@@ -1,14 +1,13 @@
 const router = require('express').Router();
-const { Post, User, Vote, Comment } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+// importing clean filter to censor vulgar language and implement on post route
 let  Filter = require('bad-words'),
 filter = new Filter();
 
-// get all users
 router.get('/', (req, res) => {
     console.log('======================');
     Post.findAll({
-        // Query configuration
         attributes: [
             'id',
             'post_text',
@@ -17,7 +16,6 @@ router.get('/', (req, res) => {
         ],
         order: [['created_at', 'DESC']],
         include: [
-            // include the Comment model here:
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -53,7 +51,6 @@ router.get('/:id', (req, res) => {
             'created_at',
         ],
         include: [
-            // include the Comment model here:
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -83,7 +80,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    // expects {title: 'Taskmaster goes public!', post_text: 'https://taskmaster.com/press', user_id: 1}
     Post.create({
         title: filter.clean(req.body.title),
         post_text: filter.clean(req.body.post_text),

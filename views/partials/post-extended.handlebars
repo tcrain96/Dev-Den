@@ -1,13 +1,9 @@
 <article class="post">
-    <div class="meta">
-        <span><img src="/images/user.png" alt="default anonymous user image"></span>
-        {{user.username}} on {{format_date created_at}}
-    </div>
-    <div class="title">
-        <a href="/post/{{id}}">{{title}}</a>
+    
+        <h2>{{title}}</h2>
+        <div class="user-info">
+            <p>{{user.username}} on {{format_date created_at}}</p>
+        </div>
         <p>{{post_text}}</p>
-    </div>
-    <div class="meta">
-        {{comments.length}} {{format_plural "comment" comments.length}}
-    </div>
+    
 </article>
