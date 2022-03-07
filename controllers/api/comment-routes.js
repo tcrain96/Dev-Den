@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Comment, User, Post } = require('../../models');
+const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
-const sequelize = require('../../config/connection');
+// importing clean filter to censor vulgar language and implement on post route
 let Filter = require('bad-words'),
 filter = new Filter();
+
 
 router.get('/', (req, res) => {
     console.log('======================');
     Comment.findAll({
-            // Query configuration
             attributes: [
                 'id',
                 'comment_text',
@@ -58,7 +58,6 @@ router.post('/', withAuth, (req, res) => {
     Comment.create({
         comment_text: filter.clean(req.body.comment_text),
         post_id: req.body.post_id,
-        // use the id from the session
         user_id: req.session.user_id
     })
         .then(dbCommentData => res.json(dbCommentData))

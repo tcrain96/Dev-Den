@@ -1,9 +1,11 @@
 <article class="post">
     
-        <h2>{{title}}</h2>
         <div class="user-info">
-            <img src="/images/user.png" alt="default anonymous user image">
             <p>{{user.username}} on {{format_date created_at}}</p>
+        </div>
+        <h2>{{title}}</h2>
+        <div>
+            <p>{{post_text}}</p>
         </div>
         {{#if loggedIn}}
         <a href="/post/{{id}}">Answer Question</a>
