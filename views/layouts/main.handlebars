@@ -1,79 +1,44 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev-Den</title>
-    <link rel="stylesheets" src="/stylesheets/style.css" />
-  </head>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+</head>
 
-  <style>
-    
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #323232;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1%;
-    }
-    a {
-      text-decoration: none;
-      color: aliceblue;
-    }
-
-    .logo {
-      text-align: left;
-      margin-left: 20px;
-    }
-
-    .nav-elem {
-      float: right;
-      margin: 15px 30px 5px 30px;
-    }
-
-    nav {
-      align-items: right;
-    }
-  </style>
-
-  <body>
+<body>
     <div class="wrapper">
-
-      <header>
-        <h1>
-          <a class="logo" href="/">Dev-Den</a>
-        </h1>
-
-        <nav>
-          <a class="nav-elem" href="/">Dashboard</a>
-          {{#if loggedIn}}
-            <a class="nav-elem" href="/posts">My Posts</a>
-            <button id="logout" class="btn-no-style">logout</button>
-          {{else}}
-            <a class="nav-elem" href="/login">login</a>
-          {{/if}}
-        </nav>
-
-      </header>
-
-      <main>
-        {{{body}}}
-      </main>
-
-      <footer>
-        <p>2022 Dev-Den All Rights Reserved</p>
-      </footer>
-
+        <header>
+            <h1>
+                <a class="head" href="/">
+                    <img class="logo" alt="DEV-DEN" src="/images/logohead.png">
+                    <h1 class="logo-text">Dev-Den</h1>
+                </a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a class="nav-elem" href="/dashboard">dashboard</a>
+                <a class="nav-elem" href="/pfpage"><img src="/images/user.png" alt="your profile picture"></a>
+                <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
+                <a class="nav-elem" href="/login">Login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            <p>Dev-Den © All Rights Reserved.</p>
+        </footer>
     </div>
 
     {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
+    <script src="/javascript/logout.js"></script>
     {{/if}}
-
-  </body>
+</body>
 
 </html>
