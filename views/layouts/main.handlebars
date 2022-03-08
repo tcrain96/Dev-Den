@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev-Den</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>   
+            <nav>
+                <article>
+                    <a href="/"><img class="logo" alt="Dev-Den Logo" src="/images/logohead.png"></a>
+                </article>
+                <article>
+                    <a class="nav-element" href="/">Home</a>
+                    {{#if loggedIn}}
+                    <a class="nav-element" href="/dashboard">Dashboard</a>
+                    <button id="logout" class="btn-no-style">Logout</button>
+                    {{else}}
+                    <a id="login" href="/login">Login</a>
+                    {{/if}}
+                </article>
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+            <p class="footer-text">Dev-Den © All Rights Reserved.</p>
+        </main>
+        
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
