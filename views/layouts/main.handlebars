@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body id="body">
     <div class="wrapper">
         <header>
             <nav>
@@ -26,9 +26,9 @@
             </nav>
         </header>
         <main>
-            <div id='error-modal' hidden="true">
-                <p id='error-text'></p>
-                <p id='close-modal'>  x</p>
+            <div class="error-modal" id='error-modal' hidden="true">
+                <p class="error-text" id='error-text' hidden="true"></p>
+                <p class="close-modal" id='close-modal' hidden="true">&times;</p>
             </div>
             {{{ body }}}
             <p class="footer-text">Dev-Den © All Rights Reserved.</p>
