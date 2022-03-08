@@ -1,25 +1,30 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Den</title>
+    <title>Dev-Den</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
 </head>
 
 <body>
     <div class="wrapper">
         <header>
             <h1>
-                <a href="/">Dev Den</a>
+                <a class="head" href="/">
+                    <img class="logo" alt="DEV-DEN" src="/images/logohead.png">
+                    <h1 class="logo-text">Dev-Den</h1>
+                </a>
             </h1>
             <nav>
                 {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
+                <a class="nav-elem" href="/dashboard">dashboard</a>
+                <a class="nav-elem" href="/pfpage"><img src="/images/user.png" alt="your profile picture"></a>
                 <button id="logout" class="btn-no-style">logout</button>
                 {{else}}
-                <a href="/login">login</a>
+                <a class="nav-elem" href="/login">Login</a>
                 {{/if}}
             </nav>
         </header>
@@ -27,10 +32,10 @@
             {{{ body }}}
         </main>
         <footer>
-            Thanks for visiting!
+            <p>Dev-Den © All Rights Reserved.</p>
         </footer>
     </div>
-    
+
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
