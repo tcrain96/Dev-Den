@@ -153,6 +153,11 @@ main .signup-form {
   margin: 20px;
 }
 
+main .login-form input,
+main .signup-form input{
+  width: 100%;
+}
+
 main .login-form h2,
 main .signup-form h2 {
   text-align: center;
@@ -214,5 +219,16 @@ main .footer-text {
 @media screen and (max-width: 980px) {
   main {
     padding: 20px 40px;
+  }
+  header {
+    background-color: var(--background-color);
+    padding: 50px 40px;
+  }
+  header nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  header nav img {
+    margin-bottom: 50px;
   }
 }
