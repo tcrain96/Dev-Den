@@ -5,35 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev-Den</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <header>
-            <h1>
-                <a class="head" href="/">
-                    <img class="logo" alt="DEV-DEN" src="/images/logohead.png">
-                    <h1 class="logo-text">Dev-Den</h1>
-                </a>
-            </h1>
+        <header>   
             <nav>
-                {{#if loggedIn}}
-                <a class="nav-elem" href="/dashboard">dashboard</a>
-                <a class="nav-elem" href="/pfpage"><img src="/images/user.png" alt="your profile picture"></a>
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
-                <a class="nav-elem" href="/login">Login</a>
-                {{/if}}
+                <article>
+                    <a href="/"><img class="logo" alt="Dev-Den Logo" src="/images/logohead.png"></a>
+                </article>
+                <article>
+                    <a class="nav-element" href="/">Home</a>
+                    {{#if loggedIn}}
+                    <a class="nav-element" href="/dashboard">Dashboard</a>
+                    <button id="logout" class="btn-no-style">Logout</button>
+                    {{else}}
+                    <a id="login" href="/login">Login</a>
+                    {{/if}}
+                </article>
             </nav>
         </header>
         <main>
             {{{ body }}}
+            <p class="footer-text">Dev-Den © All Rights Reserved.</p>
         </main>
-        <footer>
-            <p>Dev-Den © All Rights Reserved.</p>
-        </footer>
+        
     </div>
 
     {{#if loggedIn}}
