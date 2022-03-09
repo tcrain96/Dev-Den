@@ -2,104 +2,103 @@ const { Post } = require('../models');
 
 const postdata = [
   {
-    title: 'Donec posuere metus vitae ipsum.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Unwanted element shows up because of empty properties in an object',
+    post_text: 'The initial state already contains an invincible string message and that makes an unwanted delete button appear initially. How can I remove this initial delete button and make sure that they only appear once the first "submit" is sent.',
     user_id: 10
   },
   {
-    title: 'Morbi non quam nec dui luctus rutrum.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Trying to get button to sit slightly under the top of the page in header',
+    post_text: 'Trying to get button to sit slightly under the top of the page in header',
     user_id: 8
   },
   {
-    title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Massive delay between closing of <input type="file"> Select File Dialog and onchange event. Browser kind of freezing',
+    post_text: 'One thing I noticed: If I have a network drive in my Windows Explorer Quick Access toolbar that is not reachable (because I am not connected with VPN), this massive delay problem occurs much more often (although I do select a file on my Desktop that has nothing to do with this network drive).',
     user_id: 1
   },
   {
-    title: 'Nunc purus.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'html force rerender div',
+    post_text: 'I have flex row with max-height. wrapper of image have min-height:0; property for block height overflow; but after load image and shrink we see that wrapper of image is not recomputer has extra spaced (red rectangle). How i can recomputed div to shrink to image width?',
     user_id: 4
   },
   {
-    title: 'Pellentesque eget nunc.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Why did this happen? I actually found it cool, and wanna know how I made it.',
+    post_text: 'I have completed the "3 Column Preview Card Component" of Front End Mentor. But the thing is, I really liked the way it changes the Button is top margin smootlhy after shrinking the screen from Desktop to Mobile and vice-versa. The point is i dont really know how i did this. And everything seems to be on the line 91 of the css, which contains the "button:not(:hover)" rule. If I remove that, that does not work.My question is: Why is that???? The transition is not even coded on the Media Query...',
     user_id: 7
   },
   {
-    title: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Unwanted element shows up because of empty properties in an object',
+    post_text: 'The initial state already contains an invincible string message and that makes an unwanted delete button appear initially. How can I remove this initial delete button and make sure that they only appear once the first "submit" is sent.',
     user_id: 4
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Trying to get button to sit slightly under the top of the page in header',
+    post_text: 'Trying to get button to sit slightly under the top of the page in header',
     user_id: 1
   },
   {
-    title: 'Morbi non quam nec dui luctus rutrum.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Massive delay between closing of <input type="file"> Select File Dialog and onchange event. Browser kind of freezing',
+    post_text: 'One thing I noticed: If I have a network drive in my Windows Explorer Quick Access toolbar that is not reachable (because I am not connected with VPN), this massive delay problem occurs much more often (although I do select a file on my Desktop that has nothing to do with this network drive).',
     user_id: 1
   },
   {
-    title: 'Duis ac nibh.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'html force rerender div',
+    post_text: 'I have flex row with max-height. wrapper of image have min-height:0; property for block height overflow; but after load image and shrink we see that wrapper of image is not recomputer has extra spaced (red rectangle). How i can recomputed div to shrink to image width?',
     user_id: 9
   },
   {
-    title: 'Curabitur at ipsum ac tellus semper interdum.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Why did this happen? I actually found it cool, and wanna know how I made it.',
+    post_text: 'I have completed the "3 Column Preview Card Component" of Front End Mentor. But the thing is, I really liked the way it changes the Button is top margin smootlhy after shrinking the screen from Desktop to Mobile and vice-versa. The point is i dont really know how i did this. And everything seems to be on the line 91 of the css, which contains the "button:not(:hover)" rule. If I remove that, that does not work.My question is: Why is that???? The transition is not even coded on the Media Query...',
     user_id: 5
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Unwanted element shows up because of empty properties in an object',
+    post_text: 'The initial state already contains an invincible string message and that makes an unwanted delete button appear initially. How can I remove this initial delete button and make sure that they only appear once the first "submit" is sent.',
     user_id: 3
   },
   {
-    title: 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Trying to get button to sit slightly under the top of the page in header',
+    post_text: 'Trying to get button to sit slightly under the top of the page in header',
     user_id: 10
   },
   {
-    title: 'Donec dapibus.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Massive delay between closing of <input type="file"> Select File Dialog and onchange event. Browser kind of freezing',
+    post_text: 'One thing I noticed: If I have a network drive in my Windows Explorer Quick Access toolbar that is not reachable (because I am not connected with VPN), this massive delay problem occurs much more often (although I do select a file on my Desktop that has nothing to do with this network drive).',
     user_id: 8
   },
   {
-    title: 'Nulla tellus.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'html force rerender div',
+    post_text: 'I have flex row with max-height. wrapper of image have min-height:0; property for block height overflow; but after load image and shrink we see that wrapper of image is not recomputer has extra spaced (red rectangle). How i can recomputed div to shrink to image width?',
     user_id: 3
   },
   {
-    title: 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Why did this happen? I actually found it cool, and wanna know how I made it.',
+    post_text: 'I have completed the "3 Column Preview Card Component" of Front End Mentor. But the thing is, I really liked the way it changes the Button is top margin smootlhy after shrinking the screen from Desktop to Mobile and vice-versa. The point is i dont really know how i did this. And everything seems to be on the line 91 of the css, which contains the "button:not(:hover)" rule. If I remove that, that does not work.My question is: Why is that???? The transition is not even coded on the Media Query...',
     user_id: 3
   },
   {
-    title:
-      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Unwanted element shows up because of empty properties in an object',
+    post_text: 'The initial state already contains an invincible string message and that makes an unwanted delete button appear initially. How can I remove this initial delete button and make sure that they only appear once the first "submit" is sent.',
     user_id: 7
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Trying to get button to sit slightly under the top of the page in header',
+    post_text: 'Trying to get button to sit slightly under the top of the page in header',
     user_id: 6
   },
   {
-    title: 'Etiam justo.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Massive delay between closing of <input type="file"> Select File Dialog and onchange event. Browser kind of freezing',
+    post_text: 'One thing I noticed: If I have a network drive in my Windows Explorer Quick Access toolbar that is not reachable (because I am not connected with VPN), this massive delay problem occurs much more often (although I do select a file on my Desktop that has nothing to do with this network drive).',
     user_id: 4
   },
   {
-    title: 'Nulla ut erat id mauris vulputate elementum.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'html force rerender div',
+    post_text: 'I have flex row with max-height. wrapper of image have min-height:0; property for block height overflow; but after load image and shrink we see that wrapper of image is not recomputer has extra spaced (red rectangle). How i can recomputed div to shrink to image width?',
     user_id: 6
   },
   {
-    title: 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-    post_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    title: 'Why did this happen? I actually found it cool, and wanna know how I made it.',
+    post_text: 'I have completed the "3 Column Preview Card Component" of Front End Mentor. But the thing is, I really liked the way it changes the Button is top margin smootlhy after shrinking the screen from Desktop to Mobile and vice-versa. The point is i dont really know how i did this. And everything seems to be on the line 91 of the css, which contains the "button:not(:hover)" rule. If I remove that, that does not work.My question is: Why is that???? The transition is not even coded on the Media Query...',
     user_id: 7
   }
 ];
