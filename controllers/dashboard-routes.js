@@ -36,7 +36,7 @@ router.get('/', withAuth, (req, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.render('error-500');
         })
     ;
 });
@@ -76,11 +76,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
                     loggedIn: true
                 });
             } else {
-                res.status(404).end();
+                res.render('error-404');
             }
         })
         .catch(err => {
-            res.status(500).json(err);
+            console.log(err)
+            res.render('error-500');
         })
     ;
 });

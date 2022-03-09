@@ -8,7 +8,8 @@ async function logout() {
         sessionStorage.setItem('status', null)
         document.location.replace('/');
     } else {
-        alert(response.statusText);
+        displayModal(response.statusText);
+        // alert(response.statusText);
     }
 }
   

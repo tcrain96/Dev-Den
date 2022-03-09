@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body>
+<body id="body">
     <div class="wrapper">
-        <header>   
+        <header>
             <nav>
                 <article>
                     <a href="/"><img class="logo" alt="Dev-Den Logo" src="/images/logohead.png"></a>
@@ -26,10 +26,14 @@
             </nav>
         </header>
         <main>
+            <div class="error-modal" id='error-modal' hidden="true">
+                <p class="error-text" id='error-text' hidden="true"></p>
+                <p class="close-modal" id='close-modal' hidden="true">&times;</p>
+            </div>
             {{{ body }}}
             <p class="footer-text">Dev-Den © All Rights Reserved.</p>
         </main>
-        
+
     </div>
 
     {{#if loggedIn}}

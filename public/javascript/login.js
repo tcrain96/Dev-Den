@@ -1,3 +1,27 @@
+let modal = document.querySelector('#error-modal');
+let text = document.querySelector('#error-text')
+let closeBtn = document.querySelector('#close-modal');
+
+const loginText = 'Either email or password is incorrect.';
+const signUpText = 'Either email or password is formatted incorrectly.';
+
+const hideModal = () => {
+    console.log('working');
+    modal.setAttribute('hidden', true);
+    text.setAttribute('hidden', true);
+    closeBtn.setAttribute('hidden', true);
+};
+const displayModal = error => {
+    console.log('running');
+    text.innerHTML = error;
+    modal.removeAttribute('hidden')
+    text.removeAttribute('hidden')
+    closeBtn.removeAttribute('hidden')
+    closeBtn.addEventListener('click', hideModal);
+};
+
+
+
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -17,7 +41,9 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            console.log(JSON.stringify(response.statusText));
+            displayModal(loginText);
+            // alert(response.statusText);
         }
     }
 }
@@ -43,7 +69,8 @@ async function signupFormHandler(event) {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            displayModal(signUpText);
+            // alert(response.statusText);
         }
     }
 }
@@ -51,3 +78,4 @@ async function signupFormHandler(event) {
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+

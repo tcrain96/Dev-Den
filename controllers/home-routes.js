@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.render('error-500');
         })
     ;
 });
@@ -70,7 +70,7 @@ router.get('/post/:id', (req, res) => {
     })
         .then(dbPostData => {
             if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.render('error-404');
                 return;
             }
         
@@ -83,7 +83,7 @@ router.get('/post/:id', (req, res) => {
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.render('error-500');
         })
     ;
 });
