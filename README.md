@@ -87,5 +87,5 @@
   ---
   For any questions feel free to reach out through the following contacts:  
 
-  Email: jacob.tobin.liberty@gmail.com
-  Github: https://github.com/JacobGit3 
+  Email: tristan.crain@outlook.com
+  Github: https://github.com/tcrain96
